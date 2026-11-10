@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAD KORP AI</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #101629;
+  color: white;
+}
+header {
+  padding: 22px;
+  background: #19233d;
+  text-align: center;
+  border-bottom: 1px solid #34415e;
+}
+header h1 { color: #65b7ff; margin: 0; }
+header p { color: #c2cce0; }
+main {
+  max-width: 650px;
+  margin: 45px auto;
+  padding: 20px;
+}
+h2 { text-align: center; }
+.welcome {
+  text-align: center;
+  color: #bdc8dc;
+  line-height: 1.7;
+}
+.tools {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 28px 0;
+}
+.tools button {
+  padding: 17px 8px;
+  background: #202e4c;
+  border: 1px solid #405477;
+  color: white;
+  border-radius: 12px;
+  font-size: 15px;
+}
+#chat {
+  background: #19233d;
+  border-radius: 14px;
+  padding: 15px;
+}
+#messages {
+  min-height: 100px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.message {
+  padding: 12px;
+  margin: 10px 0;
+  background: #293b5e;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+form { display: flex; gap: 8px; }
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px;
+  border-radius: 9px;
+  border: none;
+}
+form button {
+  padding: 12px;
+  background: #1689e8;
+  color: white;
+  border: none;
+  border-radius: 9px;
+}
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #9eacc4;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>GAD KORP AI</h1>
+  <p>Votre intelligence, votre avenir.</p>
+</header>
+
+<main>
+  <h2>Bienvenue sur GAD KORP AI 🚀</h2>
+  <p class="welcome">
+    Votre espace intelligent pour apprendre,
+    traduire, rédiger et développer vos idées.
+  </p>
+
+  <div class="tools">
+    <button onclick="choose('Assistant intelligent')">🤖 Assistant IA</button>
+    <button onclick="choose('Traduction')">🌍 Traduction</button>
+    <button onclick="choose('Rédaction')">✍️ Rédaction</button>
+    <button onclick="choose('Business')">💼 Business</button>
+  </div>
+
+  <section id="chat">
+    <h3>Discutez avec GAD KORP AI</h3>
+    <div id="messages">
+      <div class="message">
+        Bonjour ! Bienvenue sur GAD KORP AI.
+        Que souhaitez-vous faire ?
+      </div>
+    </div>
+    <form id="chatForm">
+      <input id="question" placeholder="Écrivez votre message..." required>
+      <button type="submit">Envoyer</button>
+    </form>
+    <p style="color:#aebbd0;font-size:12px">
+      Version initiale : connexion au moteur IA à configurer.
+    </p>
+  </section>
+</main>
+
+<footer>
+  © 2026 GAD KORP AI — Tous droits réservés.
+</footer>
+
+<script>
+function choose(tool) {
+  document.getElementById("question").value =
+    "Je souhaite utiliser : " + tool;
+}
+
+document.getElementById("chatForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const input = document.getElementById("question");
+  const messages = document.getElementById("messages");
+
+  const message = document.createElement("div");
+  message.className = "message";
+  message.textContent = "Vous : " + input.value;
+  messages.appendChild(message);
+
+  const reply = document.createElement("div");
+  reply.className = "message";
+  reply.textContent =
+    "Merci ! Le moteur d'intelligence artificielle sera connecté dans une prochaine étape.";
+  messages.appendChild(reply);
+
+  input.value = "";
+});
+</script>
+
+</body>
+  </html>
+      
